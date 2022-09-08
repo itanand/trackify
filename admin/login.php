@@ -1,6 +1,12 @@
 <?php
  session_start();
  include('includes/header.php');
+ if(isset($_SESSION['auth']))
+ {
+    $_SESSION['status'] = "You are already logged In";
+    header('Location: index.php');
+
+ }
  ?>
 
 <div class="section">

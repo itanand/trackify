@@ -13,7 +13,18 @@
           <img src="assets/dist/img/anand.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Anand Mohan</a>
+          <a href="#" class="d-block"><?php
+          if(isset($_SESSION['auth']))
+          {
+            echo $_SESSION['auth_user']['user_name'];
+          }
+          else
+          {
+             echo "Not Logged In.!";
+          }
+
+          ?>
+          </a>
         </div>
       </div>
 
@@ -119,7 +130,7 @@
           </li>
           <li class="nav-item">
             <a href="pages/kanban.html" class="nav-link">
-              <i class="nav-icon fas fa-bookmark"></i>
+              <i class="nav-icon fas fa-cog"></i>
               <p>
                 Roles
               </p>
