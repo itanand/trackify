@@ -10,6 +10,6 @@
             <h1 style="text-align: center; padding-top: 10%;"> Hi, User</h1>
     </div>
 </div>
-<?php
-   include('includes/footer.php');
-?>
+
+<?php include('includes/script.php'); ?>
+<?php include('includes/footer.php'); ?>

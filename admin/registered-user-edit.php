@@ -102,5 +102,8 @@
 
 
 <?php
+   include('includes/script.php');
+?>
+<?php
    include('includes/footer.php');
 ?>

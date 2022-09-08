@@ -49,4 +49,27 @@ if(isset($_POST['updateUser']))
     header("Location: register.php");
    }
 }
+
+
+if(isset($_POST['DeleteUserbtn']))
+{
+  $userid= $_POST['delete_id'];
+
+  $query = "DELETE FROM users  WHERE id='$userid' ";
+
+  $query_run = mysqli_query($con, $query);
+
+
+  if($query_run)
+   {
+       $_SESSION['status'] = "User Deleted Successfully";
+       header("Location: register.php");
+   }
+ else
+   {
+    $_SESSION['status'] = "User Deletion Failed";
+    header("Location: register.php");
+   }
+
+}
 ?>
