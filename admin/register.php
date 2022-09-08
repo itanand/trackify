@@ -1,5 +1,5 @@
 <?php
-   session_start();
+   include('authentication.php');
    include('includes/header.php');
    include('includes/topnavbar.php');
    include('includes/sidebar.php');
