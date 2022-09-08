@@ -22,6 +22,23 @@ if(isset($_POST['check_Emailbtn']))
 }
 
 
+if(isset($_POST['check_MobileNumber']))
+{
+
+  $phone = $_POST['phone'];
+
+  $checknumber = "SELECT phone FROM users WHERE phone='$phone' ";
+  $checknumber_run = mysqli_query($con, $checknumber);
+
+  if(mysqli_num_rows($checknumber_run) > 0)
+  {
+    echo "Mobile Number is already taken.!";
+  }
+  else
+  {
+     echo "It's Available ";
+  }
+}
 
 
 if(isset($_POST['addUser']))

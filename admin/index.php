@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('includes/header.php');
 include('includes/topnavbar.php');
 include('includes/sidebar.php');
@@ -31,6 +32,11 @@ include('includes/sidebar.php');
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+          <div class="col-md-12">
+            <?php
+               include('message.php');
+            ?>
+          </div>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">

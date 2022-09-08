@@ -206,7 +206,31 @@
 
 <!-- Mobile Number Live verification -->
 
+<script>
+ $(document).ready(function (){
 
+  $('.mobile_no').keyup(function (e){
+     var phone = $('.mobile_no').val();
+
+     $.ajax({
+      type: "POST",
+      url: "code.php",
+      data: {
+        'check_MobileNumber':1,
+        'phone':phone,
+
+      },
+      success: function(response) {
+          // console.log(response);
+
+          $('.number_error').text(response);
+      }
+     });
+  });
+});
+
+
+</script>
 
 
 <!-- Email id live verification -->
