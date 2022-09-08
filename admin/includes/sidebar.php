@@ -125,6 +125,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="referrals.php" class="nav-link">
+              <i class="nav-icon fas fa-share"></i>
+              <p>
+               Referrals
+              </p>
+            </a>
+          </li>
 
 
 
