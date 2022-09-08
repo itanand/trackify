@@ -29,12 +29,14 @@
                                     </div>
                                      <div class="form-group">
                                           <label for="email">Email</label>
-                                          <input type="email" name="email" class="form-control" placeholder="Email">
+                                          <span class="email_error"></span>
+                                          <input type="email" name="email" class="form-control email_id" placeholder="Email">
                                      </div>
 
                                      <div class="form-group">
                                           <label for="number">Mobile No</label>
-                                         <input type="number" name="phone" class="form-control" placeholder="Mobile Number">
+                                          <span class="number_error"></span>
+                                         <input type="number" name="phone" class="form-control mobile_no" placeholder="Mobile Number">
                                      </div>
                                     <div class="form-group">
                                           <label for="city">City</label>
@@ -200,6 +202,42 @@
 <?php
    include('includes/script.php');
 ?>
+
+
+<!-- Mobile Number Live verification -->
+
+
+
+
+<!-- Email id live verification -->
+<script>
+ $(document).ready(function (){
+
+  $('.email_id').keyup(function (e){
+     var email = $('.email_id').val();
+
+     $.ajax({
+      type: "POST",
+      url: "code.php",
+      data: {
+        'check_Emailbtn':1,
+        'email':email,
+
+      },
+      success: function(response) {
+          // console.log(response);
+
+          $('.email_error').text(response);
+      }
+     });
+  });
+});
+
+
+</script>
+
+
+
 <script>
    $(document).ready(function (){
       $('.deletebtn').click(function (e){

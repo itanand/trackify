@@ -2,6 +2,28 @@
 session_start();
 include('config/dbconn.php');
 
+
+if(isset($_POST['check_Emailbtn']))
+{
+
+  $email = $_POST['email'];
+
+  $checkemail = "SELECT email FROM users WHERE email='$email' ";
+  $checkemail_run = mysqli_query($con, $checkemail);
+
+  if(mysqli_num_rows($checkemail_run) > 0)
+  {
+    echo "Email id is already taken.!";
+  }
+  else
+  {
+     echo "It's Available ";
+  }
+}
+
+
+
+
 if(isset($_POST['addUser']))
 {
    $name = $_POST['name'];
