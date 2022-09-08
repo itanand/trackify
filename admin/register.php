@@ -31,6 +31,7 @@
                                           <label for="email">Email</label>
                                           <input type="email" name="email" class="form-control" placeholder="Email">
                                      </div>
+
                                      <div class="form-group">
                                           <label for="number">Mobile No</label>
                                          <input type="number" name="phone" class="form-control" placeholder="Mobile Number">
@@ -39,10 +40,22 @@
                                           <label for="city">City</label>
                                           <input type="text" name="city" class="form-control" placeholder="City">
                                      </div>
-                                   <div class="form-group">
-                                           <label for="education">Password</label>
-                                          <input type="password" name="password" class="form-control" placeholder="Password">
-                                   </div>
+
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                             <label for="education">Password</label>
+                                             <input type="password" name="password" class="form-control" placeholder="Password">
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="form-group">
+                                               <label for="education">Confirm Password</label>
+                                               <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                                          </div>
+                                      </div>
+                                    </div>
+
 
                                 </div>
                              <div class="modal-footer">

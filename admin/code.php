@@ -9,20 +9,49 @@ if(isset($_POST['addUser']))
    $phone = $_POST['phone'];
    $city = $_POST['city'];
    $password = $_POST['password'];
+   $confirmpassword = $_POST['confirmpassword'];
 
-   $user_query = "INSERT INTO users( name, email, phone, city, password) VALUES ( '$name', '$email', '$phone', '$city', '$password')";
-   $user_query_run = mysqli_query($con, $user_query);
 
-   if($user_query_run)
+   if($password == $confirmpassword)
    {
-       $_SESSION['status'] = "User Added Successfully";
-       header("Location: register.php");
+
+     $checkemail = "SELECT email FROM users WHERE email= '$email' ";
+     $checkemail_run = mysqli_query($con, $checkemail);
+
+     if(mysqli_num_rows($checkemail_run) > 0)
+     {
+        //  Taken - Already Exists
+        $_SESSION['status'] = "Email Already Taken";
+        header("Location: register.php");
+        exit;
+
+     }
+     else
+     {
+      //available = Record not found
+      $user_query = "INSERT INTO users( name, email, phone, city, password) VALUES ( '$name', '$email', '$phone', '$city', '$password')";
+      $user_query_run = mysqli_query($con, $user_query);
+
+      if($user_query_run)
+        {
+           $_SESSION['status'] = "User Added Successfully";
+           header("Location: register.php");
+        }
+      else
+         {
+          $_SESSION['status'] = "User Registration Failed";
+          header("Location: register.php");
+        }
+
+     }
+
    }
- else
-   {
-    $_SESSION['status'] = "User Registration Failed";
-    header("Location: register.php");
-   }
+       else {
+        $_SESSION['status'] = "Password and Confirm Password does Not match";
+        header("Location: register.php");
+       }
+
+
 }
 
 
