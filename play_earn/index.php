@@ -21,11 +21,28 @@ session_start();
       <a href="#">CONTACT</a>
       <a href="#">ABOUT</a>
     </nav>
-    <div class='sign-in-up'>
-      <button type='button' >ADMIN LOGIN</button>
-      <button type='button' onclick="popup('login-popup')">LOGIN</button>
-      <button type='button' onclick="popup('register-popup')">REGISTER</button>
-    </div>
+
+    <?php
+           if(isset($_SESSION['login']) && $_SESSION['login']==true)
+           {
+            echo "
+            <div class='user'>
+            $_SESSION[name] - <a href='logout.php'>Logout</a>
+            </div>
+            ";
+           }
+           else
+           {
+              echo "
+              <div class='sign-in-up'>
+              <button type='button' >ADMIN LOGIN</button>
+              <button type='button' onclick=\"popup('login-popup')\">LOGIN</button>
+              <button type='button' onclick=\"popup('register-popup')\">REGISTER</button>
+            </div>
+            ";
+           }
+    ?>
+
   </header>
 
   <div class="popup-container" id="login-popup">
@@ -53,16 +70,16 @@ session_start();
         <input type="email" placeholder="Email" name="email">
         <input type="number" placeholder="Mobile Number" name="phone">
         <input type="text" placeholder="City" name="city">
-        <input type="password" placeholder="Password" name="password">
+        <input type="text" placeholder="Referral Code" name="referralcode">
         <button type="submit" class="register-btn" name="register">REGISTER</button>
       </form>
     </div>
   </div>
 
   <?php
-    if(isset($_SESSION['login']))
+    if(isset($_SESSION['login']) && $_SESSION['login']==true)
     {
-     echo "<h1 style='text-align: center'> Welcome to Play & Earn - $_SESSION[name] </h1>";
+     echo "<h1 style='text-align: center; margin-top: 15%;'> Welcome to Play & Earn - $_SESSION[name] </h1>";
     }
 
   ?>
