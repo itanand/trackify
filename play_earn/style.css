@@ -128,3 +128,18 @@
     color: #fdfdfd;
   }
 
+h3.box{
+  background-color: lightseagreen;
+  width: 700px;
+  font-weight: 600;
+  margin: 0 auto;
+  padding: 8px 20px;
+  border: 2px solid rgb(15, 15, 15);
+  border-radius: 5px;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+}
+
+h3.box a{
+  color:rgb(0, 0, 0);
+}

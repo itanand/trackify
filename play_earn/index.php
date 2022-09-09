@@ -70,7 +70,8 @@ session_start();
         <input type="email" placeholder="Email" name="email">
         <input type="number" placeholder="Mobile Number" name="phone">
         <input type="text" placeholder="City" name="city">
-        <input type="text" placeholder="Referral Code" name="referralcode">
+        <input type="text" placeholder="Referral Code" name="referralcode" id="refercode">
+        <input type="password" placeholder="Password" name="password">
         <button type="submit" class="register-btn" name="register">REGISTER</button>
       </form>
     </div>
@@ -80,7 +81,19 @@ session_start();
     if(isset($_SESSION['login']) && $_SESSION['login']==true)
     {
      echo "<h1 style='text-align: center; margin-top: 15%;'> Welcome to Play & Earn - $_SESSION[name] </h1>";
-    }
+
+
+    $query = "SELECT * FROM `users` WHERE `name`='$_SESSION[name]'";
+    $result=mysqli_query($con, $query);
+    $result_fetch=mysqli_fetch_assoc($result);
+
+    echo"<h3 class='box'>Your Referall Code: $result_fetch[referral_code]</h3>";
+    echo"<h3 class='box'>Your Referall Points: $result_fetch[referral_point]</h3>";
+    echo"<h3 class='box'>
+    Your Referall Link: <a href='http://127.0.0.1/admin_app/trackify/play_earn/index.php?refer=$result_fetch[referral_code]'>http://127.0.0.1/admin_app/trackify/play_earn/index.php?refer=$result_fetch[referral_code]</a>
+    </h3>";
+
+  }
 
   ?>
   <script>
@@ -98,5 +111,30 @@ session_start();
     }
   </script>
 
+
+<?php
+
+if(isset($_GET['refer']) && $_GET['refer']!='')
+{
+  if(!(isset($_SESSION['login']) && $_SESSION['login']==true))
+  {
+    $query="SELECT * FROM `users` WHERE `referral_code`='$_GET[refer]'";
+    $result=mysqli_query($con, $query);
+    if(mysqli_num_rows($result)==1)
+    {
+      echo
+      "<script>
+          document.getElementById('refercode').value='$_GET[refer]';
+          popup('register-popup');
+      </script>";
+    }
+    else
+    {
+      echo "<script>alert('Invalid Referral Code');</script>";
+    }
+  }
+}
+
+?>
 </body>
 </html>
