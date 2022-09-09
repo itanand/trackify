@@ -7,5 +7,18 @@ if(!isset($_SESSION['auth']))
     header("Location: login.php");
     exit(0);
 }
+else
+{
+    if($_SESSION['auth'] == "1")
+    {
+
+    }
+    else
+    {
+        $_SESSION['auth_status'] = "You are not Authorised as ADMIN";
+        header("Location: ../index.php");
+        exit(0);
+    }
+}
 
 ?>

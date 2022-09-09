@@ -1,7 +1,20 @@
 <?php
-session_start();
+include('authentication.php');
 include('config/dbconn.php');
 
+
+if(isset($_POST['logout_btn']))
+{
+
+
+unset($_SESSION['auth']);
+unset($_SESSION['auth_user']);
+
+$_SESSION['status'] ="Logged out Successful";
+header("Location: login.php");
+exit(0);
+
+}
 
 if(isset($_POST['check_Emailbtn']))
 {

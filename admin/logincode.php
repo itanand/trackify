@@ -17,9 +17,10 @@ if(isset($_POST['login_btn']))
         $user_name = $row['name'];
         $user_email = $row['email'];
         $user_phone = $row['phone'];
+        $role_as = $row['role_as'];
     }
 
-    $_SESSION['auth'] = true;
+    $_SESSION['auth'] = "$role_as";
     $_SESSION['auth_user'] = [
           'user_id'=>$user_id,
           'user_name'=>$user_name,

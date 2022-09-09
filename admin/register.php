@@ -143,7 +143,7 @@
                                              <th>Email</th>
                                              <th>Phone No</th>
                                              <th>City</th>
-                                             <th>Status</th>
+                                             <th>Role</th>
                                              <th>Action</th>
                                          </tr>
                                        </thead>
@@ -164,7 +164,16 @@
                                               <td><?php echo $row['email']; ?></td>
                                               <td><?php echo $row['phone']; ?></td>
                                               <td><?php echo $row['city']; ?></td>
-                                              <td>Active</td>
+                                              <td><?php
+                                                if($row['role_as'] == '0')
+                                                {
+                                                     echo "User";
+                                                }
+                                                elseif($row['role_as'] == '1')
+                                                {
+                                                   echo "Admin";
+                                                }
+                                              ?></td>
                                               <td>
                                                  <a href="registered-user-edit.php?user_id=<?php echo $row['id']; ?>" class="btn btn-info btn-sm">Edit</a>
                                                  <button  value="<?php echo $row['id']; ?>" class="btn btn-danger btn-sm deletebtn">Delete</button>
