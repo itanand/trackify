@@ -13,11 +13,17 @@ else
     {
 
     }
+    elseif ($_SESSION['auth'] == "0") {
+        $_SESSION['auth_status'] = "You are not Authorised as ADMIN";
+        header("Location: ../user/index.php");
+        exit(0);
+    }
     else
     {
         $_SESSION['auth_status'] = "You are not Authorised as ADMIN";
-        header("Location: ../index.php");
+        header("Location: ../referral/index.php");
         exit(0);
+
     }
 }
 

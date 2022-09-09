@@ -165,13 +165,16 @@
                                               <td><?php echo $row['phone']; ?></td>
                                               <td><?php echo $row['city']; ?></td>
                                               <td><?php
-                                                if($row['role_as'] == '0')
+                                                if($row['role_as'] == "0")
                                                 {
                                                      echo "User";
                                                 }
-                                                elseif($row['role_as'] == '1')
+                                                elseif($row['role_as'] == "1")
                                                 {
                                                    echo "Admin";
+                                                }
+                                                else{
+                                                   echo "Referrals";
                                                 }
                                               ?></td>
                                               <td>
