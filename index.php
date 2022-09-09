@@ -35,7 +35,7 @@ session_start();
            {
               echo "
               <div class='sign-in-up'>
-              <button type='button' >ADMIN LOGIN</button>
+              <a href=\"http://127.0.0.1/admin_app/trackify/admin/login.php\"><button type='button' >ADMIN LOGIN</button></a>
               <button type='button' onclick=\"popup('login-popup')\">LOGIN</button>
               <button type='button' onclick=\"popup('register-popup')\">REGISTER</button>
             </div>

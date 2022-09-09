@@ -71,6 +71,15 @@
                                         <label for="education">Password</label>
                                         <input type="password" name="password" value="<?php echo $row['password']?>" class="form-control" placeholder="Password">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="education">Give Role</label>
+                                        <select name="role_as" class="form-control" required>
+                                                <option value="">Select</option>
+                                                <option value="0">User</option>
+                                                <option value="1">Admin</option>
+                                        </select>
+
+                                    </div>
 
 
                                                 <?php

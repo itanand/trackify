@@ -19,6 +19,7 @@
 
           ?></h1>
           <h5 style="text-align: center;">Your Referrals Link is Here!</h5>
+
     </div>
 </div>
 

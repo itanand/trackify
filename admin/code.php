@@ -115,8 +115,10 @@ if(isset($_POST['updateUser']))
   $phone = $_POST['phone'];
   $city = $_POST['city'];
   $password = $_POST['password'];
+  $role_as = $_POST['role_as'];
 
-  $query = "UPDATE users SET name='$name', email='$email', phone='$phone', city='$city', password='$password' WHERE id='$user_id' ";
+
+  $query = "UPDATE users SET name='$name', email='$email', phone='$phone', city='$city', password='$password', role_as='$role_as' WHERE id='$user_id' ";
   $query_run = mysqli_query($con, $query);
 
   if($query_run)
