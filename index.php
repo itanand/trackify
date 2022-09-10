@@ -70,7 +70,7 @@ session_start();
         <input type="email" placeholder="Email" name="email">
         <input type="number" placeholder="Mobile Number" name="phone">
         <input type="text" placeholder="City" name="city">
-        <input type="text" placeholder="Referral Code" name="referralcode" id="refercode">
+        <input type="text" placeholder="Referral Code" name="referralcode" value="<?php isset($_GET['referred_by'])?$_GET['referred_by']:''?>"  id="refercode">
         <input type="password" placeholder="Password" name="password">
         <button type="submit" class="register-btn" name="register">REGISTER</button>
       </form>
