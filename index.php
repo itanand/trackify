@@ -51,13 +51,14 @@ session_start();
     </h3>
     </div>
     <div class='d-flex col-md-12 p-4'>
-    <input class='col-md-8 me-2 text-center' type='text' value='http://127.0.0.1/admin_app/trackify/index.php?refer=$result_fetch[referral_code]' id='myInput'>
-    <button class='col-md-4 me-2 btn text-danger shadow border' onclick='myFunction()'>Copy Link</button>
+    <input class='col-md-8 col-6 me-2 text-center' type='text' value='http://127.0.0.1/admin_app/trackify/index.php?refer=$result_fetch[referral_code]' id='myInput'>
+    <button class='col-md-4 col-6 me-1 btn text-danger shadow border' onclick='myFunction()'>Copy Link</button>
   </div>
     ";
   }
 
   ?>
+
 
 
 
@@ -120,6 +121,9 @@ if(isset($_GET['refer']) && $_GET['refer']!='')
 
 ?>
 </div>
+
+
+
   <?php
           include('include/footer.php')
   ?>

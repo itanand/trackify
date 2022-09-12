@@ -111,27 +111,27 @@ require('connection.php');
                         <div class="row">
                             <div class="col-md-6 ps-0 mb-3">
                             <label  class="form-label">Name</label>
-                            <input type="text" class="form-control shadow-none" name="name" >
+                            <input type="text" class="form-control shadow-none" name="name" required>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
                             <label  class="form-label">Email</label>
-                            <input type="email" class="form-control shadow-none"  name="email">
+                            <input type="email" class="form-control shadow-none"  name="email" required>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                             <label  class="form-label">Phone Number</label>
-                            <input type="number" class="form-control shadow-none" name="phone" >
+                            <input type="number" class="form-control shadow-none" name="phone" required>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
                             <label  class="form-label">City</label>
-                            <input type="text" class="form-control shadow-none" name="city" >
+                            <input type="text" class="form-control shadow-none" name="city" required>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                             <label  class="form-label">PinCode</label>
-                            <input type="number" class="form-control shadow-none" name="pincode" >
+                            <input type="number" class="form-control shadow-none" name="pincode" required>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                             <label  class="form-label">Password</label>
-                            <input type="password" class="form-control shadow-none" name="password" >
+                            <input type="password" class="form-control shadow-none" name="password" required>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
 
