@@ -80,8 +80,10 @@ if(isset($_POST['addUser']))
      }
      else
      {
+      $referral_code=strtoupper(bin2hex(random_bytes(4)));
+
       //available = Record not found
-      $user_query = "INSERT INTO users( name, email, phone, city, password) VALUES ( '$name', '$email', '$phone', '$city', '$password')";
+      $user_query = "INSERT INTO users( name, email, phone, city, password, referral_code, referred_by, referral_point ) VALUES ( '$name', '$email', '$phone', '$city', '$password','$referral_code', '$_POST[referralcode]', 0)";
       $user_query_run = mysqli_query($con, $user_query);
 
       if($user_query_run)

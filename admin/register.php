@@ -56,6 +56,12 @@
                                                <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
                                           </div>
                                       </div>
+                                      <div class="col-md-6 ">
+                                            <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode">
+                                       </div>
+                                       <div class="col-md-6">
+                                            <input type="text" class="form-control shadow-none"  name="referred_by" hidden >
+                                       </div>
                                     </div>
 
 
