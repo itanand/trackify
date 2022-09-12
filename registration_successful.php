@@ -44,14 +44,13 @@ session_start();
 
     echo "
     <div class='container p-4'><h3 class='text-center'>Your Referall Code: $result_fetch[referral_code]</h3>
-    <h3 class='text-center'>You Referred By: $result_fetch[referred_by]</h3>
     <h3 class='text-center'>Your Referall Points: $result_fetch[referral_point]</h3>
     <h3 class='text-center'>
     Your Referall Link: <a class='text-white bg-danger link-primary btn  text-decoration-none' id='btn-referral'  href='http://127.0.0.1/admin_app/trackify/play_earn/index.php?refer=$result_fetch[referral_code]'>Link</a>
     </h3>
     </div>
     <div class='d-flex col-md-12 p-4'>
-    <input class='col-md-8 me-2 text-center' type='text' value='http://127.0.0.1/admin_app/trackify/index.php?refer=$result_fetch[referral_code]' id='myInput'>
+    <input class='col-md-8 me-2 text-center' type='text' value='http://127.0.0.1/admin_app/trackify/play_earn/index.php?refer=$result_fetch[referral_code]' id='myInput'>
     <button class='col-md-4 me-2 btn text-danger shadow border' onclick='myFunction()'>Copy Link</button>
   </div>
     ";
