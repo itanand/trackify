@@ -60,7 +60,7 @@ if(isset($_POST['login']))
        if(mysqli_num_rows($result)==1)
        {
            $result_fetch=mysqli_fetch_assoc($result);
-           if(password_verify($_POST['password'], $result_fetch['password']))
+           if($_POST['password'])
            {
               #if password matched
               $_SESSION['login']=true;
@@ -138,8 +138,8 @@ if(isset($_POST['register']))
            $referral_code=strtoupper(bin2hex(random_bytes(4)));
 
 
-           $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-           $query = "INSERT INTO `users`( `name`, `email`, `phone`, `city`, `password`, `referral_code`,`referred_by`, `referral_point`) VALUES ('$_POST[name]','$_POST[email]','$_POST[phone]','$_POST[city]', '$password', '$referral_code', '$_POST[referralcode]',0)";
+
+           $query = "INSERT INTO `users`( `name`, `email`, `phone`, `city`, `password`, `referral_code`,`referred_by`, `referral_point`) VALUES ('$_POST[name]','$_POST[email]','$_POST[phone]','$_POST[city]', '$_POST[password]', '$referral_code', '$_POST[referralcode]',0)";
            if(mysqli_query($con, $query))
            {
               #if data insterted successfull
