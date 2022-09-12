@@ -3,6 +3,8 @@
 require('connection.php');
 session_start();
 
+
+
 function updateReferral(){
 
     $query = "SELECT * FROM `users` WHERE `referral_code`='$_POST[referralcode]'";
@@ -134,6 +136,7 @@ if(isset($_POST['register']))
 
 
            $referral_code=strtoupper(bin2hex(random_bytes(4)));
+           $reserred_by=
 
            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
            $query = "INSERT INTO `users`( `name`, `email`, `phone`, `city`, `password`, `referral_code`, `referral_point`) VALUES ('$_POST[name]','$_POST[email]','$_POST[phone]','$_POST[city]','$password', '$referral_code',0)";
