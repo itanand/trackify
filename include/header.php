@@ -41,7 +41,7 @@ require('connection.php');
                             {
                                 echo "
                                 <div class='container'>
-
+                                <a href=\"http://127.0.0.1/admin_app/trackify/referral/login.php\"><button class='btn btn-primary color-white' type='button'> View Profile</button></a>
                                 $_SESSION[name] - <a  class='btn btn-outline-dark shadow-none' href='logout.php'>Logout</a>
                                 </div>
                                 ";
