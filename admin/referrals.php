@@ -145,6 +145,7 @@
                                              <th>City</th>
                                              <th>Referall</th>
                                              <th>Referred By</th>
+                                             <th>Referral Point</th>
                                              <th>Action</th>
                                          </tr>
                                        </thead>
@@ -170,6 +171,9 @@
                                               </td>
                                               <td>
                                               <?php echo $row['referred_by']; ?>
+                                                </td>
+                                                <td>
+                                              <?php echo $row['referral_point']; ?>
                                                 </td>
                                               <td>
                                               <a href="registered-user-view.php?user_id=<?php echo $row['id']; ?>" class="btn btn-info btn-sm">View</a>
