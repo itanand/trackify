@@ -15,7 +15,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                           <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel">Reffer Peoples</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                   </button>
@@ -42,6 +42,10 @@
                                           <label for="city">City</label>
                                           <input type="text" name="city" class="form-control" placeholder="City">
                                      </div>
+                                     <div class="form-group">
+                                          <label for="city">City</label>
+                                          <input type="text" name="city" class="form-control" placeholder="City">
+                                     </div>
 
                                     <div class="row">
                                       <div class="col-md-6">
@@ -57,7 +61,12 @@
                                           </div>
                                       </div>
                                     </div>
-
+                                    <div class="col-md-6 p-0 mb-3">
+                                        <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode" hidden>
+                                    </div>
+                                    <div class="col-md-6 ps-0 mb-3">
+                                       <input type="text" class="form-control shadow-none"  name="referred_by" hidden >
+                                    </div>
 
                                 </div>
                              <div class="modal-footer">
@@ -116,13 +125,13 @@
                                  <table id="example1" class="table table-bordered table-striped">
                                      <thead>
                                         <tr>
-                                             <th>Id</th>
-                                             <th>Name</th>
-                                             <th>Email</th>
-                                             <th>Phone No</th>
-                                             <th>City</th>
-                                             <th>Role</th>
-                                             <th>Action</th>
+                                             <th scope='col'>Id</th>
+                                             <th scope='col'>Name</th>
+                                             <th scope='col'>Email</th>
+                                             <th scope='col'>Phone No</th>
+                                             <th scope='col'>City</th>
+                                             <th scope='col'>Role</th>
+                                             <th scope='col'>Action</th>
                                          </tr>
                                        </thead>
                                     <tbody>
@@ -137,7 +146,7 @@
 
                                                  ?>
                                         <tr>
-                                              <td><?php echo $row['id']; ?></td>
+                                              <td scope="row"><?php echo $row['id']; ?></td>
                                               <td><?php echo $row['name']; ?></td>
                                               <td><?php echo $row['email']; ?></td>
                                               <td><?php echo $row['phone']; ?></td>

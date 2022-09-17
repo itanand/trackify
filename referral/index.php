@@ -3,6 +3,7 @@ include('authentication.php');
 include('includes/header.php');
 include('includes/topnavbar.php');
 include('includes/sidebar.php');
+include('config/dbconn.php');
 ?>
 
 <!-- Anand Mohan -->
@@ -37,13 +38,18 @@ include('includes/sidebar.php');
                include('message.php');
             ?>
           </div>
+          <?php
+                $sql = "SELECT * from users WHERE role_as=0";
+                $data = mysqli_query($con,$sql);
+                $total=mysqli_num_rows($data);
+            ?>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3><?=$total?></h3>
 
-                <p>New Orders</p>
+                <p>Total Users</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -56,9 +62,10 @@ include('includes/sidebar.php');
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                <p>Total Referrels</p>
+                <h3>21<sup style="font-size: 20px">%</sup></h3>
+
+                <p>Your Referrels</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>

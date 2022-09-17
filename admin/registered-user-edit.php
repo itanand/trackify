@@ -67,6 +67,14 @@
                                         <label for="city">City</label>
                                         <input type="text" name="city" value="<?php echo $row['city']?>" class="form-control" placeholder="City">
                                     </div>
+                                    <div class="form-group ">
+                                            <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode" hidden>
+                                       </div>
+                                       <div class="form-group">
+                                          <label for="city">Referred By</label>
+                                            <input type="text" class="form-control shadow-none" value="<?php echo $row['referred_by']?>" name="referred_by"  >
+                                       </div>
+
                                     <div class="form-group">
                                         <label for="education">Password</label>
                                         <input type="password" name="password" value="<?php echo $row['password']?>" class="form-control" placeholder="Password">
@@ -74,7 +82,6 @@
                                     <div class="form-group">
                                         <label for="education">Give Role</label>
                                         <select name="role_as" class="form-control" required>
-                                                <option value="">Select</option>
                                                 <option value="0">User</option>
                                                 <option value="1">Admin</option>
                                         </select>

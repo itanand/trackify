@@ -132,7 +132,13 @@ require('connection.php');
                             <div class="col-md-6 ps-0 mb-3">
                             <label  class="form-label">Password</label>
                             <input type="password" class="form-control shadow-none" name="password" required>
+
+                            <div class="input-group-addon">
+                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                             </div>
+
+                            </div>
+
                             <div class="col-md-6 p-0 mb-3">
 
                                <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode" hidden>
