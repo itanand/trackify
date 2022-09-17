@@ -57,7 +57,7 @@
                                           </div>
                                       </div>
                                       <div class="col-md-6 ">
-                                            <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode">
+                                            <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode" hidden>
                                        </div>
                                        <div class="col-md-6">
                                             <input type="text" class="form-control shadow-none"  name="referred_by" hidden >

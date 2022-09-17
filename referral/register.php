@@ -4,6 +4,7 @@
    include('includes/topnavbar.php');
    include('includes/sidebar.php');
    include('config/dbconn.php');
+
 ?>
 
 <div class="content-wrapper">
@@ -23,6 +24,7 @@
 
                            <form action="code.php" method="POST" >
                                <div class="modal-body">
+
                                    <div class="form-group">
                                         <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control" placeholder="Name">
@@ -43,10 +45,9 @@
                                           <input type="text" name="city" class="form-control" placeholder="City">
                                      </div>
                                      <div class="form-group">
-                                          <label for="city">City</label>
-                                          <input type="text" name="city" class="form-control" placeholder="City">
-                                     </div>
-
+                                        <label for="city">referrd_by</label>
+                                       <input type="text" class="form-control shadow-none"  name="referred_by" >
+                                    </div>
                                     <div class="row">
                                       <div class="col-md-6">
                                           <div class="form-group">
@@ -64,11 +65,10 @@
                                     <div class="col-md-6 p-0 mb-3">
                                         <input type="text" class="form-control shadow-none" name="referralcode"  id="refercode" hidden>
                                     </div>
-                                    <div class="col-md-6 ps-0 mb-3">
-                                       <input type="text" class="form-control shadow-none"  name="referred_by" hidden >
-                                    </div>
 
                                 </div>
+
+
                              <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="submit" name="addUser" class="btn btn-primary">Save</button>

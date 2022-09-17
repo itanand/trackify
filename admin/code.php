@@ -63,6 +63,8 @@ exit(0);
 
 }
 
+
+
 if(isset($_POST['check_Emailbtn']))
 {
 
@@ -80,6 +82,7 @@ if(isset($_POST['check_Emailbtn']))
      echo "It's Available ";
   }
 }
+
 
 
 if(isset($_POST['check_MobileNumber']))
@@ -127,6 +130,12 @@ if(isset($_POST['addUser']))
      }
      else
      {
+
+      if($_POST['referralcode']!='')
+     {
+        updateReferral();
+     }
+
       $referral_code=strtoupper(bin2hex(random_bytes(4)));
 
       //available = Record not found
@@ -158,12 +167,14 @@ if(isset($_POST['addUser']))
 
 if(isset($_POST['updateUser']))
 {
+
 if($_POST['referralcode']!='')
   {
     updateReferral();
   }
- $referral_code=strtoupper(bin2hex(random_bytes(4)));
- $referral_point = 0;
+
+  $referral_code=strtoupper(bin2hex(random_bytes(4)));
+  $referral_point = 0;
 
   $user_id = $_POST['user_id'];
   $name = $_POST['name'];
